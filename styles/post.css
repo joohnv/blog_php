@@ -1,0 +1,175 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #4CAF50;
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+h2, h3 {
+    color: #555;
+    font-size: 1.75rem;
+    margin-top: 30px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the list of posts */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 80%;
+    max-width: 600px;
+}
+
+ul li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #f0f0f0;
+}
+
+ul li a {
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Form styling */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    background-color: #fff;
+}
+
+/* Button styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Message box */
+.message {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Comment styling */
+ul.comments {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    max-width: 600px;
+}
+
+ul.comments li {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul.comments li p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+ul.comments li strong {
+    font-weight: bold;
+    color: #333;
+}
+
+ul.comments li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Centering the page content */
+h1, h2, h3 {
+    text-align: center;
+}
+

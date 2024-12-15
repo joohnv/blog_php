@@ -1,0 +1,66 @@
+/* Estilos básicos para la vista */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.post {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+    color: #007bff;
+    font-size: 1.5rem;
+}
+
+.post p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.post small {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.no-posts {
+    font-size: 1.2rem;
+    color: #dc3545;
+}
