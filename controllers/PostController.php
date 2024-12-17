@@ -1,7 +1,7 @@
 <?php
 namespace controllers;
 
-use models\Post; // Asegúrate de usar la clase Post del namespace models
+use models\Post; 
 
 class PostController {
     private $postModel;

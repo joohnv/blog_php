@@ -176,26 +176,19 @@ class User {
         return $stmt->fetch(PDO::FETCH_ASSOC);  // Devuelve el usuario
     }
 
-    // Obtener usuario por ID
-    public function find($user_id) {
-        // Usar self::$table_name para acceder a la propiedad estática correcta
-        $query = "SELECT * FROM " . self::$table_name . " WHERE id = :user_id LIMIT 1"; 
+    public function emailExists($email) {
+        if (self::$conn === null) {
+            throw new \Exception("La conexión a la base de datos no se ha establecido.");
+        }
 
+        $query = "SELECT id FROM " . self::$table_name . " WHERE email = :email LIMIT 1";
         $stmt = self::$conn->prepare($query);
-        $stmt->bindParam(':user_id', $user_id);
+        $stmt->bindParam(':email', $email);
         $stmt->execute();
 
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // Si el usuario fue encontrado, devolver sus datos
-        if ($row) {
-            return $row;
-        } else {
-            return null;
-        }
+        return $stmt->fetch(PDO::FETCH_ASSOC) !== false;
     }
-
-
+    
 }
 
 ?>

@@ -38,24 +38,25 @@ class Post {
     }
 
     // Crear un nuevo post en la base de datos
-    public function create($user_id, $title, $content) {
-        if (empty($title) || empty($content)) {
-            throw new Exception("El título y el contenido no pueden estar vacíos.");
+    public function create() {
+        if (empty($this->title) || empty($this->content)) {
+            throw new \Exception("El título y el contenido no pueden estar vacíos.");
         }
-    
+
         $query = "INSERT INTO posts (user_id, title, content) VALUES (:user_id, :title, :content)";
         $stmt = $this->conn->prepare($query);
-    
-        $stmt->bindParam(':user_id', $user_id);
-        $stmt->bindParam(':title', $title);
-        $stmt->bindParam(':content', $content);
-    
+
+        $stmt->bindParam(':user_id', $this->user_id);
+        $stmt->bindParam(':title', $this->title);
+        $stmt->bindParam(':content', $this->content);
+
         if ($stmt->execute()) {
             return true;
         } else {
-            throw new Exception("Error al crear el post.");
+            throw new \Exception("Error al crear el post.");
         }
     }
+
     
 
     // Leer todos los posts

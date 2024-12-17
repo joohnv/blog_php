@@ -37,7 +37,7 @@ class UserController {
     // Método para iniciar sesión
     public function login($email, $password) {
         // Verificar si el usuario existe
-        $user = $this->userModel->getByEmail($email);
+        $user = $this->userModel->findByEmail($email);
         if (!$user) {
             throw new \Exception("El usuario no existe.");
         }
@@ -55,7 +55,7 @@ class UserController {
 
     // Método para obtener los detalles de un usuario
     public function getUserDetails($userId) {
-        $user = $this->userModel->getById($userId);
+        $user = $this->userModel->getUserById($userId);
         if (!$user) {
             throw new \Exception("El usuario no existe.");
         }

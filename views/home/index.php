@@ -25,21 +25,21 @@ if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
     
     // Obtener el nombre del usuario
-    $user = $userModel->find($user_id); // Método que deberías crear en tu clase User
-    $username = $user['username']; // Suponiendo que el campo se llama 'username'
+    $user = $userModel->getUserById($user_id); 
+    $username = $user['username']; 
 
     // Obtener los posts del usuario
     $postModel = new Post($db);
-    $posts = $postModel->getPostsByUser($user_id);  // Método para leer posts por user_id
+    $posts = $postModel->getPostsByUser($user_id);  
 
     // Comprobar si se está editando un post
     if (isset($_GET['post_id'])) {
         $post_id = $_GET['post_id'];
-        $post = $postModel->readOne($post_id); // Obtener el post desde la base de datos
+        $post = $postModel->readOne($post_id); 
 
         // Obtener los comentarios del post
         $commentModel = new Comment($db);
-        $comments = $commentModel->getComments($post_id); // Obtener los comentarios para el post
+        $comments = $commentModel->getComments($post_id); 
     }
 } else {
     // Si el usuario no está autenticado, redirigir a login
